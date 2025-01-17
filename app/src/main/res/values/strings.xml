@@ -6,4 +6,7 @@
     <string name="forgot_pass">Forgot Password?</string>
     <string name="logo">Logo</string>
     <string name="signup">Sign Up</string>
+    <string name="email_warning">Email inválido</string>
+    <string name="password_warning">Senha deve ter mais de 6 caracteres</string>
+    <string name="login_succeeded">Login efetuado com sucesso</string>
 </resources>
