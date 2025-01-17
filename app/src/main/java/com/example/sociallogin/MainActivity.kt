@@ -1,5 +1,6 @@
 package com.example.sociallogin
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -70,10 +71,17 @@ class MainActivity : AppCompatActivity() {
     private fun login() {
         loginButton.setOnClickListener {
             if( checkEmail() && checkPassword() ) {
-                Snackbar.make(contextView, R.string.login_succeeded, Snackbar.LENGTH_SHORT)
+                Snackbar.make(contextView, R.string.login_succeeded, Snackbar.LENGTH_LONG)
                     .setBackgroundTint(getColor(R.color.green_light))
                     .setTextColor(getColor(R.color.black))
                     .show()
+
+                val it = Intent(this, HomeActivity::class.java)
+                it.putExtra("email", emailField.text.toString())
+                startActivity(it)
+
+                emailField.text?.clear()
+                passwordField.text?.clear()
             }
         }
     }
@@ -97,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         val isValidPassword = isValidPassword(password)
         if(!isValidPassword) {
             passwordFieldLayout.setStartIconTintList(getColorStateList(R.color.red))
-            passwordFieldLayout.error = getString(R.string.password)
+            passwordFieldLayout.error = getString(R.string.password_warning)
         }
         return isValidPassword
     }
