@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green_light">#D0E6D3</color>"
     <color name="brown_light">#F1BA8884</color>"
+    <color name="brown">#50221C</color>"
     <color name="red">#B91A1A</color>"
     <color name="default_color">#ff6750a4</color>"
 </resources>
